@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Barlow";
+  src: url("../app/fonts/Barlow-BoldItalic.ttf");
+}
+.header {
+  display: flex;
+  gap: 3rem;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 75rem;
+}
+
+.slideshow {
+  width: 40rem;
+  height: 25rem;
+}
+
+.side {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: #ddd6cb;
+}
+
+.side h1 {
+  font-size: 2.2rem;
+  font-family: "Barlow";
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #d68f31, #17609c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.desc a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: white;
+  background-color: #3f0c5c;
+  text-decoration: none;
+  transition: background-color 0.8s ease; /* background-color için geçiş ekledik */
+  text-align: center;
+}
+
+.desc a:hover,
+.desc a:active {
+  background-color: #5c0c0c; /* Arka plan rengi değişimi */
+}
+
+.desc a:first-child {
+  background: transparent;
+}
+
+.desc a:first-child:hover,
+.desc a:first-child:active {
+  color: #a12f35;
+  transition: 1s;
+}
+
+.main {
+  padding-bottom: 100px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  color: #ddd6cb;
+  font-size: 1.5rem;
+  max-width: 50rem;
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 1050px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .slideshow {
+    width: 35rem;
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .slideshow {
+    width: 25rem;
+    height: 15rem;
+  }
+
+  .side {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .slideshow {
+    width: 20rem;
+    height: 10rem;
+  }
+
+  .side > h1 {
+    font-size: 2rem;
+  }
+
+  .side {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .slideshow {
+    width: 15rem;
+    height: 10rem;
+  }
+}
