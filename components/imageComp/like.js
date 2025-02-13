@@ -1,7 +1,7 @@
 "use client";
 
 import { GoHeart, GoHeartFill } from "react-icons/go";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function Like({ ID, initialLikeCount }) {
   const [like, setLike] = useState(null);
@@ -51,7 +51,7 @@ export default function Like({ ID, initialLikeCount }) {
   };
 
   // Güncel likeCount değerini almak için bir API isteği
-  const fetchUpdatedLikeCount = async (retryCount = 3) => {
+  const fetchUpdatedLikeCount = useCallback(async (retryCount = 3) => {
     try {
       const response = await fetch(`/api/getImages?ID=${ID}`); // ID'ye göre güncel veriyi alıyoruz
       if (!response.ok) {
@@ -71,7 +71,7 @@ export default function Like({ ID, initialLikeCount }) {
         alert("Like sayısı güncellenemedi. Lütfen tekrar deneyin.");
       }
     }
-  };
+  }, [ID]); // ID değiştiğinde fetchUpdatedLikeCount'ı yeniden oluşturur
 
   useEffect(() => {
     fetchUpdatedLikeCount(); // Bileşen yüklendiğinde güncel like sayısını al
