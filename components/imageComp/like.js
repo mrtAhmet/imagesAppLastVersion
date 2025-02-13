@@ -75,7 +75,7 @@ export default function Like({ ID, initialLikeCount }) {
 
   useEffect(() => {
     fetchUpdatedLikeCount(); // Bileşen yüklendiğinde güncel like sayısını al
-  }, [ID]); // ID değiştiğinde tekrar çalışır
+  }, [ID, fetchUpdatedLikeCount]); // ID ve fetchUpdatedLikeCount değiştiğinde tekrar çalışır
 
   return (
     <>
