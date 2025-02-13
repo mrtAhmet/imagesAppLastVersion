@@ -1,7 +1,15 @@
-import mysql from "mysql2/promise";
+let mysql;
+if (typeof window === 'undefined') {
+  mysql = require('mysql2/promise');
+}
+
 import { config } from "@/lib/db";
 
 export default async function saveImage(image) {
+  if (!mysql) {
+    throw new Error("MySQL module can only be used on the server side.");
+  }
+
   let connection;
   try {
     // MySQL bağlantısını oluştur
