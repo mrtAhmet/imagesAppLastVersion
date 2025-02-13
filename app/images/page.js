@@ -1,18 +1,15 @@
 import ImageGrid from "@/components/imageComp/image-grid";
 import { getImages } from "@/pages/api/getImages";
-
-import { Suspense } from "react";
+import { Suspense, use } from "react"; // use hook'u eklendi (Next.js 13+ için)
 import classes from "./page.module.css";
-import Link from "next/link";
 import SearchInput from "./search-input";
 
-async function Images() {
+async function ImagesComponent() {
   const images = await getImages();
-
   return <ImageGrid images={images} />;
 }
 
-export default function () {
+export default function ImagesPage() {
   return (
     <>
       <header className={classes.header}>
@@ -21,8 +18,8 @@ export default function () {
           <span className={classes.highlight}>by you</span>
         </h1>
         <p>
-          Search your favorite images and download for using wallpaper , profile
-          picture etc...
+          Search your favorite images and download for using wallpaper, profile
+          picture, etc...
         </p>
       </header>
       <main className={classes.main}>
@@ -36,7 +33,8 @@ export default function () {
             <h1>Recently Added Images</h1>
             <hr className={classes.hr} />
           </div>
-          <Images />
+          {/* Next.js 13+ için use hook'u ile çağırma */}
+          {use(ImagesComponent())}
         </Suspense>
       </main>
     </>
