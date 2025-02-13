@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SlugItem({ image }) {
   console.log(image.title);
   return (
@@ -5,7 +7,13 @@ export default function SlugItem({ image }) {
       <p>the car is</p>
       <p>{image.title}</p>
       <div>
-        <img src={image.imageURL} alt="" />
+        <Image
+          src={image.imageURL}
+          alt={image.imageDesc}
+          width={500}
+          height={300}
+          priority
+        />
       </div>
       <p>{image.imageDesc}</p>
     </>

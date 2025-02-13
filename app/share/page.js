@@ -39,7 +39,7 @@ export default function ShareImagePage() {
               <label htmlFor="tags">
                 Image Tags{" "}
                 <span className={classes.note}>
-                  Note:Use comma ',' after tag example(car,sportcar)
+                  Note: Use comma &apos;, &apos; after tag example(car,sportcar)
                 </span>
               </label>
               <input type="text" name="tags" id="tags" required />

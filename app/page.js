@@ -30,7 +30,7 @@ export default function Home() {
           <h2>What we provide?</h2>
           <p>
             We provide free unlimited image library for users. Users can
-            download images and share their favorite images with the world. It's
+            download images and share their favorite images with the world. It&apos;s
             a place to find new photos that users want and share them to the
             world.
           </p>
@@ -43,7 +43,7 @@ export default function Home() {
           <h2>Why Share Your Images?</h2>
           <p>
             We provides convenience to users around the world. You can use it
-            for business, homework, school project, etc..
+            for business, homework, school project, etc.&hellip;
           </p>
         </section>
       </main>
